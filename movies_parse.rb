@@ -10,7 +10,7 @@ Documentary1 = []
 Fantasy1 = []
 Animation1 = []
 
-##borra los campos solicitados
+#erase fields in the csv file
 movie.each do |data|
   data.delete(:status)
   data.delete(:sound)
@@ -20,10 +20,9 @@ movie.each do |data|
   data.delete(:dvd_releasedate)
   data.delete(:id) 
   data.delete(:timestamp)
- #puts "-------------------------------------------"
-  #puts data# show data hash in console
-end
 
+end
+# search in the movie array and pops in each category new array
 movie.each do |m|
   case m[:genre]
   when 'Music'
@@ -36,19 +35,21 @@ movie.each do |m|
     Animation1 << Animation.new(m)
   end
 end
-puts "/////////////////////Categorias/////////////////////////"
-puts "         peliculas musicales : #{Music1.count}"
-puts "         peliculas documentales : #{Documentary1.count}"
-puts "         peliculas de fantasia : #{Fantasy1.count}"
-puts "         peliculas animadas : #{Animation1.count}"
-puts "////////////////////////////////////////////////////////"
 
+#prints the total amounts by category
+# puts "/////////////////////Categorias/////////////////////////"
+# puts "         peliculas musicales : #{Music1.count}"
+# puts "         peliculas documentales : #{Documentary1.count}"
+# puts "         peliculas de fantasia : #{Fantasy1.count}"
+# puts "         peliculas animadas : #{Animation1.count}"
+# puts "////////////////////////////////////////////////////////"
 
+#tess
 #puts movie.select {|i| i[:dvd_title] == "Connection (2014/ Blu-ray)" }
 # hola={}
 # puts movie.select{ |item| item[:genre] == "Comedy" }
 
-
+puts Music1
 
 
 
